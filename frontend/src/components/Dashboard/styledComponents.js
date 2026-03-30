@@ -2,14 +2,22 @@ import styled from "styled-components";
 
 export const DashboardBgContainer = styled.div`
     width: 100vw;
+    min-height: 100vh;
 `
 
 export const DashboardContainer = styled.div`
     width: 100%;
+    min-height: 90vh;
     background-color: #1f1f1f;
+`
+
+export const DashboardListContainer = styled.ul`
+    width: 100%;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 0px;
 `
 
 export const TasksFailureContainer = styled.div`

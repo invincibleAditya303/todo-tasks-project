@@ -59,9 +59,9 @@ const LoginForm = props => {
                         <LoginImage src='https://assets.ccbp.in/frontend/react-js/meetup/website-register-img.png' alt='website login' />
                     </LoginImageContainer>
                     <LoginFormContainer onSubmit={onSubmitLoginForm}>
-                        <LoginHeading>Category Managment</LoginHeading>
+                        <LoginHeading>Task Managment</LoginHeading>
                         <InputContainer>
-                            <LabelHeading>USERNAME</LabelHeading>
+                            <LabelHeading>EMAIL</LabelHeading>
                             <InputText type='text' placeholder='Enter Username' value={email} onChange={onChangeEmail} />
                         </InputContainer>
                         <InputContainer>

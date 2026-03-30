@@ -1,7 +1,8 @@
-import { DashboardBgContainer, DashboardContainer, TasksFailureContainer, TasksFailureImg, TasksFailureHeading, TasksFailureText, RetryButton } from "./styledComponents"
+import { DashboardBgContainer, DashboardContainer, TasksFailureContainer, TasksFailureImg, TasksFailureHeading, TasksFailureText, RetryButton, DashboardListContainer } from "./styledComponents"
 import Header from '../Header'
 import { useEffect, useState } from "react"
 import Cookies from 'js-cookie'
+import {jwtDecode} from 'jwt-decode'
 import {RingLoader} from 'react-spinners'
 import TaskItemCard from "../TaskItemCard"
 
@@ -21,10 +22,13 @@ const Dashboard = () => {
         const getAlltasks = async () => {
             setApiStatus(apisStatusConstants.inProgress)
             const jwtToken = Cookies.get('userDetails')
+            const decoded = jwtDecode(jwtToken)
+            console.log(decoded)
             const apiUrl = `${process.env.REACT_APP_API_URL}/api/tasks`
             const options = {
                 method: 'GET',
                 headers: {
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${jwtToken}`
                 }
             }
@@ -33,6 +37,7 @@ const Dashboard = () => {
             if (response.ok) {
                 const data = await response.json()
                 setTasksList(data.message)
+                console.log(data.message)
                 setApiStatus(apisStatusConstants.success)
             } else {
                 setApiStatus(apisStatusConstants.failure)
@@ -40,7 +45,7 @@ const Dashboard = () => {
         }
 
         getAlltasks()
-    }, [tasksList])
+    }, [])
 
     const renderLoaderView = () => (
         <RingLoader color="#36d7b7"  size={30} />
@@ -55,11 +60,13 @@ const Dashboard = () => {
         </TasksFailureContainer>
     )
 
-    const renderSuccessView = () => {
-        tasksList.map(eachTask => 
-            <TaskItemCard key={eachTask.id} taskDetails={eachTask} />
-        )
-    }
+    const renderSuccessView = () => (
+        <DashboardListContainer>
+            {tasksList.map(eachTask => 
+                <TaskItemCard key={eachTask.id} taskDetails={eachTask} />
+            )}
+        </DashboardListContainer>
+    )
 
     const renderStatusView = () => {
         switch (apiStatus) {

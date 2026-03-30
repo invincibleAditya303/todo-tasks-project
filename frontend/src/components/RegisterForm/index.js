@@ -17,6 +17,8 @@ const Register = () => {
         const newProfile = {...formData}
         
         const apiUrl = `${process.env.REACT_APP_API_URL}/api/auth/register`
+        console.log(process.env)
+        console.log(process.env.REACT_APP_API_URL)
         const options = {
             method: 'POST',
             headers: {
@@ -26,14 +28,13 @@ const Register = () => {
         }
 
         const response = await fetch(apiUrl, options)
+        console.log(response)
+        const data = await response.json()
 
         if (response.ok) {
-            const data = await response.json()
             setSuccessMsg(data.message)
             setFormData({name: '', email: '', password: ''})
         } else {
-            const data = await response.json()
-
             setErrMsg(data.message)
         }
     }

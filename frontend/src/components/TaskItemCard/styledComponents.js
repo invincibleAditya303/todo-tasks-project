@@ -5,6 +5,9 @@ export const UserItemContainer = styled.li`
     height: 20vh;
     background-color: #ffffff;
     border-radius: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+    list-style-type: none:
 `
 
 export const UserTitle = styled.p`
