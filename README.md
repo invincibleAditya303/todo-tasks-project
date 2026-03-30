@@ -12,6 +12,7 @@ their own tasks and admin can manage all users and assign tasks.
 ---
 
 ### Backend Setup
+```
 cd backend
 npm install
 
@@ -21,12 +22,15 @@ JWT_SECRET = your_secret_key
 
 Run backend: 
 npm run dev
+```
 ---
 
 ### Frontend Setup
+```
 cd frontend
 npm install
 npm start
+```
 
 ## Tech Stack
 
