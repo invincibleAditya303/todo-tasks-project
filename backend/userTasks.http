@@ -1,0 +1,35 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john123@example.com",
+    "password": "John@123"
+}
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "john123@example.com",
+    "password": "John@123"
+}
+###
+
+POST http://localhost:5000/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Yzk2MDY2YjY0OTEzMDFiZTViZTZjOCIsImVtYWlsIjoiam9objEyM0BleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc0ODA1OTY0LCJleHAiOjE3NzQ4OTIzNjR9.Yjryk3aTev8pDgToFnUeC5FVoyhB2t8N5QvrfV5kEc4
+Content-Type: application/json
+
+{
+    "title": "Learn AI Tools",
+    "completed": "false"
+}
+###
+
+GET http://localhost:5000/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Yzk2MDY2YjY0OTEzMDFiZTViZTZjOCIsImVtYWlsIjoiam9objEyM0BleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc0ODA1OTY0LCJleHAiOjE3NzQ4OTIzNjR9.Yjryk3aTev8pDgToFnUeC5FVoyhB2t8N5QvrfV5kEc4
+###
+
+GET http://localhost:5000/api/tasks/69c964b091d825ac541cde0e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Yzk2MDY2YjY0OTEzMDFiZTViZTZjOCIsImVtYWlsIjoiam9objEyM0BleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc0ODA1OTY0LCJleHAiOjE3NzQ4OTIzNjR9.Yjryk3aTev8pDgToFnUeC5FVoyhB2t8N5QvrfV5kEc4
