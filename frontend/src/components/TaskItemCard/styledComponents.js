@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const TaskItemContainer = styled.li`
     width: 30vw;
-    height: 25vh;
+    height: 28vh;
     background-color: #ffffff;
     border-radius: 15px;
     margin-top: 10px;
@@ -20,7 +20,7 @@ export const TaskTitle = styled.p`
     font-family: "Roboto";
     font-weight: 700;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
 `
 
 export const TaskNameText = styled.p`
