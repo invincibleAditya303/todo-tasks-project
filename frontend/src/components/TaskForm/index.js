@@ -9,7 +9,7 @@ const TaskForm = () => {
     const [successMsg, setSuccessMsg] = useState('')
 
     const onChangeTitle = event => setTitle(event.target.value)
-    const onChangeCompleted = event => setCompleted(event.target.value)
+    const onChangeCompleted = event => setCompleted(Boolean(Number(event.target.value)))
 
     const onSubmitTaskForm = async event => {
         event.preventDefault()
@@ -59,8 +59,8 @@ const TaskForm = () => {
                     <TaskInputContainer>
                         <TaskLabelHeading htmlFor="description">Completed</TaskLabelHeading>
                         <TaskCompletedSelect value={completed} onChange={onChangeCompleted}>
-                            <TaskCompletedSelectOption value="true">Yes</TaskCompletedSelectOption>
-                            <TaskCompletedSelectOption value="false">No</TaskCompletedSelectOption>
+                            <TaskCompletedSelectOption value="1">Yes</TaskCompletedSelectOption>
+                            <TaskCompletedSelectOption value="0">No</TaskCompletedSelectOption>
                         </TaskCompletedSelect>
                     </TaskInputContainer>
                     <TaskAddButton>Add Task</TaskAddButton>

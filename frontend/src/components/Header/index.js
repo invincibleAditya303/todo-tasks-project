@@ -2,7 +2,10 @@ import { HeaderBgContainer, HeaderTitle, LinkItem, LinksContainer, LogoutButton 
 import { Link } from "react-router-dom"
 
 const Header = () => {
-    const onClickLogout = () => {}
+    const onClickLogout = () => {
+        Cookies.remove('userDetails')
+        window.location.reload()
+    }
 
     return (
         <HeaderBgContainer>
