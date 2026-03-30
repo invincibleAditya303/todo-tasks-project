@@ -1,5 +1,6 @@
 import { HeaderBgContainer, HeaderTitle, LinkItem, LinksContainer, LogoutButton } from "./styledComponents"
 import { Link } from "react-router-dom"
+import Cookies from 'js-cookie'
 
 const Header = () => {
     const onClickLogout = () => {

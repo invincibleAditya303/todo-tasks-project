@@ -12,6 +12,7 @@ const App = () => (
     <Route exact path='/login' component={LoginForm} />
     <ProtectedRoute exact path='/' component={Dashboard} />
     <ProtectedRoute exact path='/addtask' component={TaskForm} />
+    <ProtectedRoute exact path='/addtask/:id' component={TaskForm} />
   </Switch>
 )
 

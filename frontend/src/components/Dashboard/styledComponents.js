@@ -2,22 +2,27 @@ import styled from "styled-components";
 
 export const DashboardBgContainer = styled.div`
     width: 100vw;
-    min-height: 100vh;
 `
 
 export const DashboardContainer = styled.div`
     width: 100%;
     min-height: 90vh;
+    display: flex;
+    justify-content: center;
     background-color: #1f1f1f;
 `
 
 export const DashboardListContainer = styled.ul`
-    width: 100%;
+    width: 90%;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding-left: 0px;
+
+    @media (max-width: 776px) {
+        flex-direction: column;
+    }
 `
 
 export const TasksFailureContainer = styled.div`
@@ -35,7 +40,7 @@ export const TasksFailureHeading = styled.h1`
     font-family: 'Roboto';
     font-weight: 700;
 
-    @media (width < 776px) {
+    @media (max-width: 776px) {
         font-size: 18px;
     }
 `
@@ -68,7 +73,7 @@ export const RetryButton = styled.button`
     cursor: pointer;
     outline: none;
 
-    @media (width < 776px) {
+    @media (max-width: 776px) {
         height: 24px;
         font-size: 10px;
         padding: 3px;
