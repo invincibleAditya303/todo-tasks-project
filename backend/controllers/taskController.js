@@ -89,7 +89,7 @@ exports.updateTask = async (request, response) => {
             return response.status(403).json({message: 'Forbidden'})
         }
 
-        if (!title && title !== undefined) {
+        if (title !== undefined && title !== null) {
             if (title.trim() === '') {
                 return response.status(400).json({message: 'Title cannot be empty'})
             }
@@ -97,7 +97,7 @@ exports.updateTask = async (request, response) => {
             task.title = title.trim()
         }
 
-        if (!completed && completed !== undefined) {
+        if (completed !== null && completed !== undefined) {
             if (typeof completed !== 'boolean') {
                 return response.status(400).json({message: 'Completed must be boolean'})
             }
