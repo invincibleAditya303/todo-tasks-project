@@ -6,9 +6,10 @@ their own tasks and admin can manage all users and assign tasks.
 
 ## Setup Instructions
   ### CLone the repository
+  ```
   git clone https://github.com/invincibleAditya303/todo-tasks-project.git
   cd project root
-
+```
 ---
 
 ### Backend Setup
